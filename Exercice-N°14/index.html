@@ -1,0 +1,227 @@
+<!--
+Exercice n°14 - Sélectionner une balise HTML
+
+Durée de l’exercice : 30min
+ 
+Méthodes pour sélectionner une balise HTML
+getElementById, getElementsByTagName, getElementsByClassName,querySelector, querySelectorAll
+
+Objectif de l'exercice : Comment trouver et accéder aux éléments HTML dans une page HTML. Trouver et 
+manipuler des éléments HTML.
+
+Énoncé :
+
+document.getElementById()- Select the unique element with the given id. In case there are 2 same IDs 
+then it selects the first element.
+
+document.getElementsByClassName()- Select collection elements with given classname
+
+document.getElementsByTagName() - Select collection elements with given tagname
+
+document.querySelector() - Select element the first element on the basic of CSS string(id, class or tag)
+
+document.querySelectorALL()- Select a list of elements on the basic of CSS string (id, class or tag): 
+
+1 - getElementsByTagName(‘tagname’);
+
+document.getElementsByTagName('p')
+document.getElementsByTagName('h1')
+
+Étapes : 
+1.	Créez un document html avec une balise 3 paragraphes et 2 balises h1 avec du texte.
+2.	Sélectionnez le paragraphe en utilisant getElementsByTagName et changez la couleur du premier 
+paragraphe en rouge et du deuxième paragraphe en bleu.
+3.	Sélectionnez l'élément h1 en utilisant getElementsByTagName et changez la taille de la police du 
+premier élément h1.
+
+2. getElementsById('idname');
+Étapes : 
+1.	Trouver des éléments HTML avec l’Id
+2.	Changer la taille de caractère de l’élément
+
+3. getElementsByClassName('classname');
+Étapes : 
+1.	Créez une liste non ordonnée avec 4 éléments.
+ <ul>
+      <li class="fruits">apple</li>
+      <li>Vegetable</li>
+      <li class="fruits">banana</li>
+      <li>Flowers</li>
+      <li class="fruits">mango</li>
+    </ul>
+a.	Sélectionnez l'élément ou le groupe d'éléments avec le nom de la classe.
+b.	Changez la couleur de la mangue en rouge.
+4. querySelector('any css');
+
+Étapes :
+1.	Créez une liste non ordonnée avec 4 éléments.
+ <ul class="bg-color">
+      <li class="fruits">apple</li>
+      <li>Vegetable</li>
+      <li class="fruits">banana</li>
+      <li>Flowers</li>
+      <li class="fruits">mango</li>
+    </ul>
+a.	Sélectionnez la balise ul à l'aide du querySelector.
+b.	Appliquer la couleur de fond orange à la balise ul.
+5. querySelectorAll('any css');
+
+Étapes :
+1.	Créez une liste non ordonnée avec 4 éléments.
+ <ul class="bg-color">
+      <li class="fruits">apple</li>
+      <li>Vegetable</li>
+      <li class="fruits">banana</li>
+      <li>Flowers</li>
+      <li class="fruits">mango</li>
+    </ul>
+a.	Sélectionnez la balise de liste ayant le nom de classe fruits en utilisant querySelectorAll.
+b.	Changez la couleur de toutes les balises li sélectionnées en rouge.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélectionner une balise HTML</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        // 1 - getElementsByTagName(‘tagname’);
+
+
+        // 11.	Créez un document html avec une balise 3 paragraphes et 2 balises h1 avec du texte.
+
+        var titre = document.createElement('h1');
+        var node = document.createTextNode("I'm a title h1");
+        titre.appendChild(node);
+        var element = document.getElementById("container");
+        element.appendChild(titre);
+        var titre = document.createElement('h1');
+        var node = document.createTextNode("I'm an another title h1");
+        titre.appendChild(node);
+        element.appendChild(titre);
+        var tag = document.createElement('p');
+        var node = document.createTextNode("I'm the first paragraph");
+        tag.appendChild(node);
+        element.appendChild(tag);
+        var tag = document.createElement('p');
+        var node = document.createTextNode("I'm the second paragraph");
+        tag.appendChild(node);
+        element.appendChild(tag);
+        var tag = document.createElement('p');
+        tag.id = ("idp3");
+        var node = document.createTextNode("I'm the third paragraph");
+        tag.appendChild(node);
+        element.appendChild(tag);
+
+
+        // 12.	Sélectionnez le paragraphe en utilisant getElementsByTagName et changez la couleur 
+        // du premier paragraphe en rouge et du deuxième paragraphe en bleu.
+
+        var para = document.getElementsByTagName("p");
+        para[0].style.color = "red";
+        para[1].style.color = "blue";
+
+
+        // 13.	Sélectionnez l'élément h1 en utilisant getElementsByTagName et changez 
+        // la taille de la police du premier élément h1.
+
+        var heading = document.getElementsByTagName("h1");
+        heading[0].style.fontSize = "60px";
+
+
+        // 2. getElementsById('idname');
+
+        // Étapes : 
+        // 21.	Trouver des éléments HTML avec l’Id
+
+        var divx = document.getElementById("idp3");
+        divx.style.color = "green";
+
+        // 22.	Changer la taille de caractère de l’élément
+        divx.style.fontSize = "32px";
+        divx.style.backgroundColor = "orange";
+
+
+        // 3. getElementsByClassName('classname');
+        // Étapes : 
+        // 31. Créez une liste non ordonnée avec 4 éléments.
+
+        var text1 = document.createTextNode("apple");
+        // var list1 = document.createElement("li");
+        // list1.className = "fruits";
+        // var list1 = document.createElementsByClassName("fruits");
+        var list1 = document.createElement("li");
+        list1.className = ("fruits");
+        list1.appendChild(text1);
+        var unli = document.createElement("ul");
+        unli.appendChild(list1);
+        element.appendChild(unli);
+        var text2 = document.createTextNode("banana");
+        var list2 = document.createElement("li");
+        list2.className = ("fruits");
+        list2.appendChild(text2);
+        unli.appendChild(list2);
+        var text3 = document.createTextNode("Flowers");
+        var list3 = document.createElement("li");
+        list3.appendChild(text3);
+        unli.appendChild(list3);
+        var text4 = document.createTextNode("mango");
+        var list4 = document.createElement("li");
+        list4.className = ("fruits");
+        list4.appendChild(text4);
+        unli.appendChild(list4);
+
+
+        // a.	Sélectionnez l'élément ou le groupe d'éléments avec le nom de la classe.
+        // b.	Changez la couleur de la mangue en rouge.
+
+        var frui = document.getElementsByClassName("fruits");
+        frui[2].style.color = "red";
+
+
+        // 4. querySelector('any css');
+
+        // Étapes :
+        // 41.	Créez une liste (<ul class="bg-color">) non ordonnée avec 4 éléments.
+
+        var text1 = document.createTextNode("apple");
+        var list1 = document.createElement("li");
+        list1.className = ("fruits");
+        list1.appendChild(text1);
+        var unli = document.createElement("ul");
+        unli.className = ("bg-color");
+        unli.appendChild(list1);
+        element.appendChild(unli);
+        var text2 = document.createTextNode("banana");
+        var list2 = document.createElement("li");
+        list2.className = ("fruits");
+        list2.appendChild(text2);
+        unli.appendChild(list2);
+        var text3 = document.createTextNode("Flowers");
+        var list3 = document.createElement("li");
+        list3.appendChild(text3);
+        unli.appendChild(list3);
+        var text4 = document.createTextNode("mango");
+        var list4 = document.createElement("li");
+        list4.className = ("fruits");
+        list4.appendChild(text4);
+        unli.appendChild(list4);
+
+        // a.	Sélectionnez la balise ul à l'aide du querySelector.
+        // b.	Appliquer la couleur de fond orange à la balise ul.
+
+        var jqu = $(".bg-color");
+        jqu[0].style.backgroundColor = "orange";
+    </script>
+</body>
+
+</html>
