@@ -14,12 +14,12 @@ créer un nœud de texte pour chaque balise, puis enfin ajouter cette balise div
 à la balise div avec un id container du DOM. -->
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to add a new element to HTML DOM in JavaScript?</title>
 </head>
 
@@ -34,42 +34,38 @@ créer un nœud de texte pour chaque balise, puis enfin ajouter cette balise div
         tag.appendChild(text);
         var element = document.getElementById('container');
         element.appendChild(tag);
-        var tag = document.createElement('p');
-        var text = document.createTextNode('on va voir si ça marche');
-        tag.appendChild(text);
-        var element = document.getElementById('container');
-        element.appendChild(tag);
-        var unlis = document.createElement("ul");
-        unlis.id = "unorderList";
-        var lisno = document.createElement("li");
-        unlis.appendChild(lisno);
-        var texto = document.createTextNode("blobloblo");
-        lisno.appendChild(texto);
-        var element = document.getElementById('container');
-        element.appendChild(unlis);
-        var lisna = document.createElement("li");
-        var texta = document.createTextNode("blablabla");
-        lisna.appendChild(texta);
-        var lisni = document.createElement("li");
-        var texti = document.createTextNode("bliblibli");
-        lisni.appendChild(texti);
-        var elmt = document.getElementById('unorderList');
-        elmt.appendChild(lisna);
-        elmt.appendChild(lisni);
         var diva = document.createElement('div');
-        element.appendChild(diva);
-        var tag = document.createElement('h1');
-        var texte = document.createTextNode("I'm a title h1");
-        tag.appendChild(texte);
-        diva.appendChild(tag);
-        var tag = document.createElement('h2');
-        var texte = document.createTextNode("I'm a title h2");
-        tag.appendChild(texte);
-        diva.appendChild(tag);
-        var tag = document.createElement('p');
-        var texte = document.createTextNode("I'm a litle paragraph");
-        tag.appendChild(texte);
-        diva.appendChild(tag);
+        diva.setAttribute('id', 'unorderList');
+        var bodi = document.querySelector('body');
+        bodi.appendChild(diva);
+        var unLi = document.createElement('ul');
+        var li1 = document.createElement('li');
+        var li2 = document.createElement('li');
+        var li3 = document.createElement('li');
+        var text1 = document.createTextNode('text1');
+        var text2 = document.createTextNode('text2');
+        var text3 = document.createTextNode('text3');
+        li1.appendChild(text1);
+        li2.appendChild(text2);
+        li3.appendChild(text3);
+        unLi.appendChild(li1);
+        unLi.appendChild(li2);
+        unLi.appendChild(li3);
+        diva.appendChild(unLi);
+        var divb = document.createElement('div');
+        element.appendChild(divb);
+        var tag1 = document.createElement('h1');
+        var tag2 = document.createElement('h2');
+        var tag3 = document.createElement('p');
+        divb.appendChild(tag1);
+        divb.appendChild(tag2);
+        divb.appendChild(tag3);
+        var text11 = document.createTextNode('text11');
+        var text12 = document.createTextNode('text12');
+        var text13 = document.createTextNode('text13');
+        tag1.appendChild(text11);
+        tag2.appendChild(text12);
+        tag3.appendChild(text13);
     </script>
 </body>
 
